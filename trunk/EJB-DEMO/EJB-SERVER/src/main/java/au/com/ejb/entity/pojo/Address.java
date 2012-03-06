@@ -8,19 +8,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Address")
-public class Address {
+@Table(name="address")
+public class Address {	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="phone_no")	
-	private int phone_no;
+	private Long phoneno;
+	
 	@Column(name="city")
 	private String city;
 	
-	public int getPhone_no() {
-		return phone_no;
+	public Address() {
 	}
-	public void setPhone_no(int phoneNo) {
-		phone_no = phoneNo;
+	public Address(Long phone_no,String city) {
+		this.phoneno=phone_no;
+		this.city=city;
+	}
+	public Address(String city) {
+		this.city=city;
+	}
+	
+	public Long getPhoneno() {
+		return phoneno;
+	}
+	public void setPhoneno(Long phoneNo) {
+		this.phoneno = phoneNo;
 	}
 	public String getCity() {
 		return city;
