@@ -13,13 +13,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
-@SequenceGenerator(name="empSeq",sequenceName="emp_seq")
 
 @Entity
 @javax.persistence.Table(name="department")
 public class Department {
-	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Id	
 	@Column(name="dep_id")
 	private int depId;
 	@Column(name="dep_name")

@@ -10,12 +10,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-@SequenceGenerator(name="empSeq",sequenceName="emp_seq")
 @Entity
 @Table(name="employee")
 public class Employee {
 	@Id	
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	@Column(name="emp_id")
 	private int empId;
 	@Column(name="emp_name")
