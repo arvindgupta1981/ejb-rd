@@ -1,5 +1,6 @@
 package au.com.ejb.dao;
 
-public class AddressDAOInt{
+
+public interface AddressDAOInt extends BaseDAOInt{
 
 }

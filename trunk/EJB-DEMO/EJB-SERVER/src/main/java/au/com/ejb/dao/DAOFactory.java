@@ -1,11 +1,29 @@
 package au.com.ejb.dao;
 
-public class DAOFactory {
-	private static AddressDAO addressDAO;
-	static{
-		addressDAO=new AddressDAO();
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.persistence.EntityManager;
+
+
+
+public class DAOFactory implements DAOFactoryInt{
+	private static AddressDAO addressDAO=null;
+	private static DAOFactory daoFactory=new DAOFactory();
+	private DAOFactory() {
+		Context iniCtx=null;
+		try {
+			iniCtx = new InitialContext();
+			EntityManager entityManager=(EntityManager) iniCtx.lookup("java:Manager1");
+			addressDAO=new AddressDAO(entityManager);
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+		
 	}
-	private DAOFactory(){}
+	public static DAOFactory getInstance(){
+		return daoFactory;
+	}
 	public static BaseDAO getAddressDAO(){
 		return addressDAO;
 	}
