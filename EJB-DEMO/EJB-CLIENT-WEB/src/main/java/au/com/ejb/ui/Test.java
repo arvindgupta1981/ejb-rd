@@ -19,14 +19,14 @@ public class Test extends HttpServlet {
 	protected void doGet(HttpServletRequest arg0, HttpServletResponse arg1)
 			throws ServletException, IOException {
 		System.out.println("get");
-		adressFacade.persistAddress(new Address("del"));
+		adressFacade.persistAddress("delhi");
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest arg0, HttpServletResponse arg1)
 			throws ServletException, IOException {
 		System.out.println("post");
-		adressFacade.persistAddress(new Address("del"));
+		adressFacade.persistAddress("delhi");
 	}
 
 }
