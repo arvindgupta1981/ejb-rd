@@ -11,12 +11,10 @@
 		<class>au.com.ejb.entity.pojo.Employee</class>
 		<properties>
 			<!-- validate | update | create | create-drop -->
-			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
-			<property name="jboss.entity.manager.jndi.name" value="java:/Manager1"/>
-            <property name="jboss.entity.manager.factory.jndi.name" value="java:/Manager1Factory"/>
-			
+			<property name="jboss.entity.manager.jndi.name" value="java:/entityManager"/>
+            <property name="jboss.entity.manager.factory.jndi.name" value="java:/entityManagerFactory"/>			
 		</properties>
 	</persistence-unit>
-
 </persistence>

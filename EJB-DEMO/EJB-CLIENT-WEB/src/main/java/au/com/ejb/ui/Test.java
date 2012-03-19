@@ -11,15 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 import au.com.ejb.dao.BaseDAOInt;
 import au.com.ejb.entity.pojo.Address;
 import au.com.ejb.session.stateless.Base.AddressFacadeLocal;
+import au.com.ejb.session.stateless.Base.EmployeeFacadeLocal;
 
 public class Test extends HttpServlet {
-	@EJB
-	private AddressFacadeLocal adressFacade;
+	@EJB private AddressFacadeLocal adressFacade;
+	@EJB private EmployeeFacadeLocal employeeFacade;
+	
 	@Override
 	protected void doGet(HttpServletRequest arg0, HttpServletResponse arg1)
 			throws ServletException, IOException {
 		System.out.println("get");
-		adressFacade.persistAddress("delhi");
+		//adressFacade.persistAddress("delhi");
+		employeeFacade.persistEmployee();
 	}
 
 	@Override
