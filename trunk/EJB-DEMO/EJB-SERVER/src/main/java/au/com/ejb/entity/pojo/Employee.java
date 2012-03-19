@@ -18,9 +18,9 @@ public class Employee {
 	private int empId;
 	@Column(name="emp_name")
 	private String name;
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name="dep_id")
-	private Department depId;
+	private Department depId;*/
 	
 	public Employee(){}	
 	public int getEmpId() {
@@ -35,15 +35,15 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Department getDepId() {
+/*	public Department getDepId() {
 		return depId;
 	}
 	public void setDepId(Department depId) {
 		this.depId = depId;
-	}
-	@Override
+	}*/
+	/*@Override
 	public String toString() {
 		return empId+":::"+name+":::"+depId.toString();
-	}
+	}*/
 	
 }
