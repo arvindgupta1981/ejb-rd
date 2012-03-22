@@ -13,16 +13,16 @@ public class EmployeeDAO extends BaseDAO implements EmployeeDAOInt {
 
 	public boolean persistEmployee() {
 		Employee employee=new Employee();
-		employee.setEmpId(1);
+		employee.setEmpId(100);
 		employee.setName("Arvind");
 		Department department=new Department();
-		department.setDepId(2);
+		department.setDepId(200);
 		department.setName("IT");
+		//department.setEmployee(employee);
+		//department.getEmployees().add(employee);
 		//employee.setDepId(department);
-		department.getEmployees().add(employee);
-		entityManager.persist(employee);
+		
+		entityManager.persist(department);
 		return false;
 	}
-	
-
 }
